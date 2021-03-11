@@ -51,32 +51,38 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am a Pro group management bot, with some Special features.
- 
-Hosted in Heroku with ElephantSQL Database,
-I Can make your group management fun and easy!
-Press or type /help to Get to know about my Modules
-==========================
-✗ [Updates Channel](t.me/HackfreaksUpdates).
-✗ [Support Group](t.me/HackfreaksSupport).
-✗ [Repository](github.com/swatv3nub/Hackfreaks)
+*Hi* {} , *My Name Is* {}! 
 
-Maintained by @Swonit
-Wanna Add me to your Group? Just click the button below!
+*✦ I Can Help You To Manage Your Groups With Some Special Features. ✦
+
+✤ Awesome Features ⬇️
+★ AFK 
+★ Bluetext Cleaning
+★ Command Disabling
+★ Extras
+★ Hentai
+★ Image Search
+★ Lyrics 
+★ Restrictions
+★ SpamProtection
+★ TTS*
+==========================
+✗ [Updates Channel](t.me/FrenzyUpdates).
+✗ [Support Group](t.me/FrenzySupport).
+==========================
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="About Project Hackfreaks", url="https://t.me/ProjectHackfreaks"
+            text="Updates ✨", url="https://t.me/FrenzyUpdates"
         ),
-        InlineKeyboardButton(text="Add Me to a group âž•", url="https://t.me/MrHackfreaksRobot?startgroup=true"),
+        InlineKeyboardButton(text="Add Me To A Group 🔔", url="https://t.me/Frenzy_Robot?startgroup=true"),
     ]
 ]
 
 HELP_STRINGS = """
-Hello there! My name is *{}*.
+Hello there! My Name Is *{}*.
 Have a look at the following for an idea of some of \
 the things I can help you with.
 
@@ -95,7 +101,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-HACKFREAKS_IMG = "telegra.ph/file/4538e359834b77487e88b.jpg"
+HACKFREAKS_IMG = "https://telegra.ph/Frenzy-03-11"
 
 DONATE_STRING = """Hope You are Satisfied with Me. As of now I don't need any Donations
 Since I am Hosted in Heroku with a Cheap Database add-on. If I need Some After Growing and Upgrading to a Faster and Advanced Hosting,
@@ -197,21 +203,21 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(                   
                           [[
                               InlineKeyboardButton(
-                              text="🔥Add Hackfreaks To Your Group🔥",
-                              url="t.me/{}?startgroup=true".format(
+                              text="🃏Add Me To Your Group🃏",
+                              url="t.me/Frenzy_Robot?startgroup=true".format(
                                   context.bot.username))
                           ], [
                               InlineKeyboardButton(
-                              text="About Project Hackfreaks", 
+                              text="🎗Official Channel🎗", 
                               url="https://t.me/ProjectHackfreaks"
         )],
                           [
                               InlineKeyboardButton(
-                              text="🍁Support Group🍁",
-                              url=f"https://t.me/HackfreaksSupport"),
+                              text="🎯Support Group🎯",
+                              url=f"https://t.me/FrenzySupport"),
                               InlineKeyboardButton(
-                              text="✨Updates Channel✨",
-                              url="https://t.me/HackfreaksUpdates")
+                              text="🎳Updates Channel🎳",
+                              url="https://t.me/FrenzyUpdates")
                           ]])) 
     else:
         update.effective_message.reply_text(
@@ -317,7 +323,7 @@ def get_help(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
                     text="Help",
-                    url="t.me/{}?start=help".format(context.bot.username))
+                    url="t.me/Frenzy_Robot?start=help".format(context.bot.username))
             ]]))
         return
 
@@ -383,7 +389,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(escape_markdown(chat.title),
+            text = "*{}* Has the following settings for the *{}* module:\n\n".format(escape_markdown(chat.title),
                                                                                      CHAT_SETTINGS[module].__mod_name__) + \
                    CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(
@@ -457,7 +463,7 @@ def get_settings(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Settings",
-                        url="t.me/{}?start=stngs_{}".format(
+                        url="t.me/Frenzy_Robot?start=stngs_{}".format(
                             context.bot.username, chat.id))
                 ]]))
         else:
@@ -478,10 +484,10 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 1228116248 and DONATION_LINK:
+        if OWNER_ID != 1176443685 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
+                "[here](t.me/Fiend_XY)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN)
 
     else:
