@@ -65,7 +65,8 @@ PM_START_TEXT = """
 ★ Lyrics 
 ★ Restrictions
 ★ SpamProtection
-★ TTS*
+★ TTS
+◔ 30+ Features*
 ==========================
 ✗ [Updates Channel](t.me/FrenzyUpdates).
 ✗ [Support Group](t.me/FrenzySupport).
